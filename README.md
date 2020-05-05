@@ -1,10 +1,10 @@
 # Python custom Kubernetes Operator Demo 
 - It's a Demo to handle configmap, which will be be rewritten by operator sdk in the future!
-- I would recommend demo-app v2 as the demo, because I remove kubectl sidecar with demo-app v1, which would be more flexible
+- I would recommend demo-app:v2 as the final choice, because demo-app:v2 is  more flexible
 
 ## demo-app Operator version
-- demo-app v2 with sa token
-- demo-app v1 with kubectl container
+- demo-app:v2 with sa token
+- demo-app:v1 with kubectl container
 
 ### Build demo-app and demo operator images
 ```

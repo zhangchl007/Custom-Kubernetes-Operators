@@ -1,0 +1,59 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUM2akNDQWRLZ0F3SUJBZ0lCQVRBTkJna3Foa2lHOXcwQkFRc0ZBREFtTVNRd0lnWURWUVFEREJ0dmNHVnUKYzJocFpuUXRjMmxuYm1WeVFERTFPRGMzTXpjM05qUXdIaGNOTWpBd05ESTBNVFF4TmpBeldoY05NalV3TkRJegpNVFF4TmpBMFdqQW1NU1F3SWdZRFZRUUREQnR2Y0dWdWMyaHBablF0YzJsbmJtVnlRREUxT0RjM016YzNOalF3CmdnRWlNQTBHQ1NxR1NJYjNEUUVCQVFVQUE0SUJEd0F3Z2dFS0FvSUJBUURGc1lCTFpMM0VoWE55ampvVldPSmEKQks4MFdNcEdMaEpmekxuV2EyK3lpUExFbWZRS3U1cnB1VU9EOC81K3RNc09Sb3NFOE9oU1NZc0FxQ3NXSjNpWQpSR2hhT2o5bytVRFlyMlRQdlJKaUxxbjF4Zmx4QlhadFlWZTNmeU8wQlh5dlNEQnVpcnU5clA1YkJYTTBCbVJhCmJOYkZMQmhQSjRXdEpNTkk5UU1LazNnZ3ZYcFJITW5mQ2d3WWJtdlp2VkJDWFcxN3l1Tm9Qb0dlMUxPSnZXbUEKd1I3Uk15Q2RZZmxSWEd1SEFPZmd2ZFdFdmtBcmpZT0V2M0ZhNGErWUtJcGVOaTN1d1pBUmZrMC9RaHBXMm45QQp1eVVINzVJalQ3bkpTVUR6ODRXeW9UaE9RYWxqNmh1aHBJRkhoK3U4NXQ3WHUyVDhFa1BCYTNVcS82bGFTUTFGCkFnTUJBQUdqSXpBaE1BNEdBMVVkRHdFQi93UUVBd0lDcERBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUEwR0NTcUcKU0liM0RRRUJDd1VBQTRJQkFRQ2lsejR4ZFpibmY5VUJuTVpYdVFoa0djMmlBT1p1U2NhTXRBSWFPdE9lV3lkUQp1TlVQaTYzQXJENGxEVWp0ZzlIMUk5aWV4VUp6ZVR0bUJmcnNxazBjZ3JMVG9NOW1SR28rcStVZ0dtaEVrVTNPCitGYldBajc1NjNuTGdRMStvbWNCOC82L2tWMTdjK21sT25VV3ErcXA2QWNrNmhUdVNNWERIWUVLRi9ucklYa1cKK1I5VzlWVGRBQUNQYktwTkloL0JyYXpqcW51Z1dBL0hod1l6cmRaVXpJakRzN0RxSkVLakozOFBWbzR0ZjlNVApXVmszMCtXVkpOMzVva2NSdlFFRk9aZTdyQ1ZzenM0dE91NUZ0dlY1TjlRUDJteXhsd0M4enAxT0xweE9RNTJCCis4SWxlL0M3M01tdWs0c0RlVUo3YWhkek9IV1FqWS9NR3NUUEg3YWgKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+    server: https://192.168.99.109:8443
+  name: 192-168-99-109:8443
+- cluster:
+    insecure-skip-tls-verify: true
+    server: https://master.lab.xkgs.gd.csg.local:8085
+  name: master-lab-xkgs-gd-csg-local:8085
+- cluster:
+    certificate-authority: /root/.minikube/ca.crt
+    server: https://192.168.99.108:8443
+  name: minikube
+contexts:
+- context:
+    cluster: master-lab-xkgs-gd-csg-local:8085
+    namespace: default
+    user: b1F5ScceG9P_TFZLP4xpBeX4fPeo7ViMonw_NgPnMjw/master-lab-xkgs-gd-csg-local:8085
+  name: default/master-lab-xkgs-gd-csg-local:8085/b1F5ScceG9P_TFZLP4xpBeX4fPeo7ViMonw_NgPnMjw
+- context:
+    cluster: minikube
+    user: minikube
+  name: minikube
+- context:
+    cluster: 192-168-99-109:8443
+    namespace: myproject
+    user: developer/192-168-99-109:8443
+  name: minishift
+- context:
+    cluster: 192-168-99-100:8443
+    namespace: myproject
+    user: developer/192-168-99-100:8443
+  name: myproject/192-168-99-100:8443/developer
+- context:
+    cluster: 192-168-99-100:8443
+    namespace: myproject
+    user: system:admin/192-168-99-100:8443
+  name: myproject/192-168-99-100:8443/system:admin
+- context:
+    cluster: 192-168-99-109:8443
+    namespace: myproject
+    user: developer/192-168-99-109:8443
+  name: myproject/192-168-99-109:8443/developer
+- context:
+    cluster: 192-168-99-109:8443
+    namespace: myproject
+    user: system:admin/192-168-99-109:8443
+  name: myproject/192-168-99-109:8443/system:admin
+current-context: minikube
+kind: Config
+preferences: {}
+users:
+- name: b1F5ScceG9P_TFZLP4xpBeX4fPeo7ViMonw_NgPnMjw/master-lab-xkgs-gd-csg-local:8085
+  user: {}
+- name: minikube
+  user:
+    client-certificate: /root/.minikube/client.crt
+    client-key: /root/.minikube/client.key

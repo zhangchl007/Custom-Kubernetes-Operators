@@ -1,0 +1,4 @@
+FROM python:latest
+RUN pip install requests
+COPY main-v1.py /main.py
+ENTRYPOINT [ "python", "/main.py" ]

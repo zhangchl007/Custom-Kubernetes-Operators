@@ -1,8 +1,8 @@
-# Python Demo Operator 
+# Python Operator Demo 
 
-It's a Demo to handle configmap by Operator, which will rewrite by operator sdk in the future!
+It's a Demo to handle configmap by Operator, which will be be rewritten by operator sdk in the future!
 
-## Demo-app Operator version
+## demo-app Operator version
 - Demo-app v1 with kubectl container
 - Demo-app v2 with sa token
 

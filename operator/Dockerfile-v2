@@ -1,4 +1,4 @@
 FROM python:latest
 RUN pip install requests
 COPY main-v2.py /main.py
-ENTRYPOINT [ "python", "/main.py" ]
+CMD [ "python", "/main.py" ]

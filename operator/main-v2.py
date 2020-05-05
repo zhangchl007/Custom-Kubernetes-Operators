@@ -19,20 +19,24 @@ log.setLevel(logging.INFO)
 # env variable
 namespace = os.getenv("res_namespace", "default")
 base_url = os.getenv("base_url", "https://192.168.99.108:8443")
-mytoken = os.getenv("mytoken", "eyJhbGciOiJSUzI1NiIsImtpZCI6IkxqMjFzMlpoQnA2S3haUzdFTXU2UUQ2cVREejhQdm9CdE5RUVFpNmZVRlkifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJyb2JvdC10b2tlbi12cnY4bSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJyb2JvdCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50LnVpZCI6IjZhNDIxOGY1LTdhZTgtNDQ5ZS05NmUxLTQwNTI1ZjNjODE3MiIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDprdWJlLXN5c3RlbTpyb2JvdCJ9.bsirEsoBixTRmkgnw0tWx-GSXTqKxvRqjZIID9Q4YAg_ZFvik1rupcWQnZY2qmjBpqDBBEKgPmlUpWfeeU3z-E3KdIwRAfqAnI9ee0Qdq98rp1zXTHpxEFxSL1m8s5JYAHt6LQru3-ov5529WAmhak06wc8mJLqWQANDGoVMIaWgaU2mnPtBXoZHYBTCkpr8lqNmIPwrv3NBcgJsMG39hA_ufA9TRjzaNrjCEuDE_sxa4CJQH_QtW5Eu1K3Cm5dASU1mcNUxX6O49ljOnEwEQsahw03a1FoGNkRidNH9Q--jFAVGgPkXdGO2Q7syFgtwYy7JpWzVlzxhf2NkI7gOgQ")
-headers = {'Authorization': "Bearer $mytoken"}
+#mytoken = os.getenv("mytoken1", "eyJhbGciOiJSUzI1NiIsImtpZCI6IkxqMjFzMlpoQnA2S3haUzdFTXU2UUQ2cVREejhQdm9CdE5RUVFpNmZVRlkifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJyb2JvdC10b2tlbi12cnY4bSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJyb2JvdCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50LnVpZCI6IjZhNDIxOGY1LTdhZTgtNDQ5ZS05NmUxLTQwNTI1ZjNjODE3MiIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDprdWJlLXN5c3RlbTpyb2JvdCJ9.bsirEsoBixTRmkgnw0tWx-GSXTqKxvRqjZIID9Q4YAg_ZFvik1rupcWQnZY2qmjBpqDBBEKgPmlUpWfeeU3z-E3KdIwRAfqAnI9ee0Qdq98rp1zXTHpxEFxSL1m8s5JYAHt6LQru3-ov5529WAmhak06wc8mJLqWQANDGoVMIaWgaU2mnPtBXoZHYBTCkpr8lqNmIPwrv3NBcgJsMG39hA_ufA9TRjzaNrjCEuDE_sxa4CJQH_QtW5Eu1K3Cm5dASU1mcNUxX6O49ljOnEwEQsahw03a1FoGNkRidNH9Q--jFAVGgPkXdGO2Q7syFgtwYy7JpWzVlzxhf2NkI7gOgQ")
+headers = {'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkxqMjFzMlpoQnA2S3haUzdFTXU2UUQ2cVREejhQdm9CdE5RUVFpNmZVRlkifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJyb2JvdC10b2tlbi12cnY4bSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJyb2JvdCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50LnVpZCI6IjZhNDIxOGY1LTdhZTgtNDQ5ZS05NmUxLTQwNTI1ZjNjODE3MiIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDprdWJlLXN5c3RlbTpyb2JvdCJ9.bsirEsoBixTRmkgnw0tWx-GSXTqKxvRqjZIID9Q4YAg_ZFvik1rupcWQnZY2qmjBpqDBBEKgPmlUpWfeeU3z-E3KdIwRAfqAnI9ee0Qdq98rp1zXTHpxEFxSL1m8s5JYAHt6LQru3-ov5529WAmhak06wc8mJLqWQANDGoVMIaWgaU2mnPtBXoZHYBTCkpr8lqNmIPwrv3NBcgJsMG39hA_ufA9TRjzaNrjCEuDE_sxa4CJQH_QtW5Eu1K3Cm5dASU1mcNUxX6O49ljOnEwEQsahw03a1FoGNkRidNH9Q--jFAVGgPkXdGO2Q7syFgtwYy7JpWzVlzxhf2NkI7gOgQ'}
 
 # This is the function that searches for and kills Pods by searching for them by label
-
+def api_return(url):
+   r=requests.get(url, headers=headers, verify=False)
+   t=json.loads(r.content)
+   return t
 
 def kill_pods(labels):
     # We receive labels in the form of a list
     for label in labels:
         url = "{}/api/v1/namespaces/{}/pods?labelSelector={}".format(
             base_url, namespace, label)
-        r = requests.get(url, headers=headers, verify=False)
+        #r = requests.get(url, headers=headers, verify=False)
         # Make the request to the endpoint to retreive the Pods
-        response = r.json()
+        #response = r.json()
+        response = api_return(url)
         # Extract the Pod name from the list
         pods = [p['metadata']['name'] for p in response['items']]
         # For each Pod, issue an HTTP DELETE request
@@ -52,9 +56,10 @@ def kill_pods(labels):
 def getPodLabels(configmap):
     url = "{}/apis/demo.com/v1/namespaces/{}/configmonitors".format(
         base_url, namespace)
-    r = requests.get(url,headers=headers, verify=False)
+    #r = requests.get(url,headers=headers, verify=False)
     # Issue the HTTP request to the appropriate endpoint
-    response = r.json()
+    #response = r.json()
+    response = api_return(url)
     # Extract the podSelector part from each object in the response
     pod_labels_json = [i['spec']['podSelector']
                        for i in response['items'] if i['spec']['configmap'] == "flaskapp-config"]
@@ -70,12 +75,14 @@ def event_loop():
     log.info("Starting the service")
     url = '{}/api/v1/namespaces/{}/configmaps?watch=true"'.format(
         base_url, namespace)
-    r = requests.get(url, headers=headers, verify=False, stream=True)
+    #r = requests.get(url, headers=headers, verify=False, stream=True)
+    print(url)
+    r = api_return(url)
+    print(r)
     # We issue the request to the API endpoint and keep the conenction open
     for line in r.iter_lines():
         obj = json.loads(line)
         # We examine the type part of the object to see if it is MODIFIED
-        print(obj)
         event_type = obj['type']
         # and we extract the configmap name because we'll need it later
         configmap_name = obj["object"]["metadata"]["name"]

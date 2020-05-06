@@ -19,8 +19,9 @@ log.setLevel(logging.INFO)
 # env variable
 namespace = os.getenv("res_namespace", "default")
 base_url = os.getenv("base_url", "https://192.168.99.108:8443")
-#mytoken = os.getenv("mytoken1", "eyJhbGciOiJSUzI1NiIsImtpZCI6IkxqMjFzMlpoQnA2S3haUzdFTXU2UUQ2cVREejhQdm9CdE5RUVFpNmZVRlkifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJyb2JvdC10b2tlbi12cnY4bSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJyb2JvdCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50LnVpZCI6IjZhNDIxOGY1LTdhZTgtNDQ5ZS05NmUxLTQwNTI1ZjNjODE3MiIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDprdWJlLXN5c3RlbTpyb2JvdCJ9.bsirEsoBixTRmkgnw0tWx-GSXTqKxvRqjZIID9Q4YAg_ZFvik1rupcWQnZY2qmjBpqDBBEKgPmlUpWfeeU3z-E3KdIwRAfqAnI9ee0Qdq98rp1zXTHpxEFxSL1m8s5JYAHt6LQru3-ov5529WAmhak06wc8mJLqWQANDGoVMIaWgaU2mnPtBXoZHYBTCkpr8lqNmIPwrv3NBcgJsMG39hA_ufA9TRjzaNrjCEuDE_sxa4CJQH_QtW5Eu1K3Cm5dASU1mcNUxX6O49ljOnEwEQsahw03a1FoGNkRidNH9Q--jFAVGgPkXdGO2Q7syFgtwYy7JpWzVlzxhf2NkI7gOgQ")
-headers = {'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6IkxqMjFzMlpoQnA2S3haUzdFTXU2UUQ2cVREejhQdm9CdE5RUVFpNmZVRlkifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJyb2JvdC10b2tlbi12cnY4bSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJyb2JvdCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50LnVpZCI6IjZhNDIxOGY1LTdhZTgtNDQ5ZS05NmUxLTQwNTI1ZjNjODE3MiIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDprdWJlLXN5c3RlbTpyb2JvdCJ9.bsirEsoBixTRmkgnw0tWx-GSXTqKxvRqjZIID9Q4YAg_ZFvik1rupcWQnZY2qmjBpqDBBEKgPmlUpWfeeU3z-E3KdIwRAfqAnI9ee0Qdq98rp1zXTHpxEFxSL1m8s5JYAHt6LQru3-ov5529WAmhak06wc8mJLqWQANDGoVMIaWgaU2mnPtBXoZHYBTCkpr8lqNmIPwrv3NBcgJsMG39hA_ufA9TRjzaNrjCEuDE_sxa4CJQH_QtW5Eu1K3Cm5dASU1mcNUxX6O49ljOnEwEQsahw03a1FoGNkRidNH9Q--jFAVGgPkXdGO2Q7syFgtwYy7JpWzVlzxhf2NkI7gOgQ'}
+mytoken = os.getenv("mytoken", "eyJhbGciOiJSUzI1NiIsImtpZCI6IkxqMjFzMlpoQnA2S3haUzdFTXU2UUQ2cVREejhQdm9CdE5RUVFpNmZVRlkifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJyb2JvdC10b2tlbi12cnY4bSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJyb2JvdCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50LnVpZCI6IjZhNDIxOGY1LTdhZTgtNDQ5ZS05NmUxLTQwNTI1ZjNjODE3MiIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDprdWJlLXN5c3RlbTpyb2JvdCJ9.bsirEsoBixTRmkgnw0tWx-GSXTqKxvRqjZIID9Q4YAg_ZFvik1rupcWQnZY2qmjBpqDBBEKgPmlUpWfeeU3z-E3KdIwRAfqAnI9ee0Qdq98rp1zXTHpxEFxSL1m8s5JYAHt6LQru3-ov5529WAmhak06wc8mJLqWQANDGoVMIaWgaU2mnPtBXoZHYBTCkpr8lqNmIPwrv3NBcgJsMG39hA_ufA9TRjzaNrjCEuDE_sxa4CJQH_QtW5Eu1K3Cm5dASU1mcNUxX6O49ljOnEwEQsahw03a1FoGNkRidNH9Q--jFAVGgPkXdGO2Q7syFgtwYy7JpWzVlzxhf2NkI7gOgQ")
+mytoken = mytoken.rstrip()
+headers = {'Authorization': 'Bearer {}'.format(mytoken)}
 
 # This is the function that searches for and kills Pods by searching for them by label
 def api_return(url):
@@ -76,9 +77,7 @@ def event_loop():
     url = '{}/api/v1/namespaces/{}/configmaps?watch=true"'.format(
         base_url, namespace)
     #r = requests.get(url, headers=headers, verify=False, stream=True)
-    print(url)
     r = api_return(url)
-    print(r)
     # We issue the request to the API endpoint and keep the conenction open
     for line in r.iter_lines():
         obj = json.loads(line)
@@ -94,7 +93,6 @@ def event_loop():
             # Once we have the labels, we can use them to find and kill the Pods by calling the
             # kill_pods function
             kill_pods(labels)
-
 
 event_loop()
 

@@ -15,7 +15,7 @@ docker build -t  docker.io/zhangchl007/demo-app:v1 .
 cd ../operator
 docker build -t  docker.io/zhangchl007/demo-operator:v1 . -f Dockerfile-v1
 
-cd ../kubectl_img
+cd ../kubectl-proxy
 docker build -t  zhangchl007/k8s-kubectl:v1 .
 
 # operator v2
